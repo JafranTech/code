@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MJ UNIVERSITY</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="src/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      background-color: rgb(199, 167, 167);
+      color: white;
+    }
+
+    .nav-links ul {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffc107;
+    }
+
+    .offcanvas-header {
+      background-color: rgb(199, 167, 167);
+      color: #fff;
+    }
+
+    .moving-text-box {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      background: rgb(199, 167, 167);
+      color: black;
+      padding: 20px;
+      position: relative;
+      height: 60px;
+    }
+
+    .moving-text {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: moveRight 8s linear infinite;
+      font-size: 28px;
+      font-weight: bold;
+      white-space: nowrap;
+      width: max-content;
+    }
+
+    @keyframes moveRight {
+      0% {
+        left: 100%;
+      }
+
+      100% {
+        left: -100%;
+      }
+    }
+
+    #Admission {
+      border: 5px solid rgb(255, 255, 255);
+      padding: 15px;
+      background: #f6f6f6;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .menu-link {
+      text-decoration: none;
+      color: white;
+      display: block;
+    }
+
+    .menu-link:hover {
+      color: yellow;
+    }
+
+    .menu-item {
+      background-color: rgb(199, 167, 167);
+      padding: 1rem;
+    }
+
+    /* Tablet view: equal heights and smaller fonts */
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      .row {
+        display: flex;
+        align-items: stretch;
+      }
+      .col-12.col-md-4 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #Admission {
+        font-size: 13px;
+        padding: 8px;
+      }
+      #Admission h2 {
+        font-size: 16px;
+        margin-bottom: 4px;
+        margin-top: 8px;
+      }
+      #Admission h4,
+      #Admission h5 {
+        font-size: 12px;
+        margin-bottom: 2px;
+      }
+      #Admission p {
+        font-size: 12px;
+        margin-bottom: 6px;
+      }
+      #Admission .btn {
+        padding: 4px 8px;
+        font-size: 13px;
+      }
+      #Admission img {
+        height: 18px !important;
+        max-width: 26px;
+      }
+    }
+
+    /* Small screens: stack columns, reset height */
+    @media (max-width: 767.98px) {
+      .row {
+        display: block;
+      }
+      .col-12.col-md-4 {
+        display: block;
+        width: 100%;
+      }
+      #Admission {
+        height: auto;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="brand">
+      <img src="src/logo.png" alt="logo" style="height: 50px; width: auto; margin-right: 10px;">
+      <h1>MJ UNIVERSITY</h1>
+    </div>
+
+    <!-- Desktop Nav Links -->
+    <div class="nav-links d-none d-md-block">
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">ADMISSION</a></li>
+      </ul>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <div class="d-block d-md-none">
+      <img src="src/more.png" alt="More" style="width: 40px; height: 40px; cursor: pointer;" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" />
+    </div>
+  </nav>
+
+  <!-- Offcanvas Menu -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 id="offcanvasRightLabel">More Options</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <hr class="m-0 bg-dark" style="height: 5px;">
+    <div class="offcanvas-body m-0 p-0">
+      <ul style="list-style-type: none; padding-left: 0;">
+        <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+        <hr class="m-0 bg-dark">
+        <li class="menu-item"><a href="#" class="menu-link">About Us</a></li>
+        <hr class="m-0 bg-dark">
+        <li class="menu-item"><a href="#" class="menu-link">Courses / Programs Offered</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Carousel -->
+  <div id="demo" class="carousel slide mt-0" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="src/mj university.png" class="img-fluid" alt="Slide 1">
+      </div>
+      <div class="carousel-item">
+        <img src="src/generated-image (1).png" class="img-fluid" alt="Slide 2">
+        <div class="carousel-caption">
+          <h3>20206 BATCH</h3>
+          <p>Thank you, MJ UNIVERSITY!</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="src/generated-image.png" class="img-fluid" alt="Slide 3">
+        <div class="carousel-caption">
+          <h3>2027 BATCH</h3>
+          <p>We had such a great time in MJ UNIVERSITY!</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Moving Text -->
+  <div class="moving-text-box">
+    <div class="moving-text">Admission Open | Apply Now | Ranked 1 among India's top 100 universities | Admission Open |
+      Apply Now | Ranked 1 among India's top 100 universities</div>
+  </div>
+
+  <!-- Admission Section -->
+  <div class="container-fluid" style="margin: 0; padding: 0; background-color:rgb(199, 167, 167);">
+    <div class="row mt-0">
+      <div class="col-12 col-md-4">
+        <img src="src/poster.png" class="img-fluid img-thumbnail" alt="MJ University Poster">
+      </div>
+
+      <div class="col-12 col-md-4" id="Admission">
+        <h2>🎓 ADMISSIONS OPEN 2025-26 </h2>
+        <p><strong> Unlock Your Future at MJ UNIVERSITY </strong><br>
+          Join one of the most promising institutions shaping tomorrow’s leaders.
+        </p>
+        <h2><img src="src/education.png" alt="" style="height: 30px; width: auto;"> Courses Offered</h2>
+        <h5>B.Tech / M.Tech – Engineering</h5>
+        <h5>B.Sc / M.Sc – Science</h5>
+        <h5>B.A / M.A – Arts & Humanities</h5>
+        <h5>BBA / MBA – Management</h5>
+        <br>
+        <h2>💡 Why Choose MJ UNIVERSITY?</h2>
+        <h4>💼 100% Placement Support</h4>
+        <h4>🎯 Industry-Ready Curriculum</h4>
+        <h4>🧑‍🏫 Expert Faculty & Mentorship</h4>
+        <h4>🏆 State-of-the-art Campus</h4>
+        <h4>🌐 Global Exposure Programs</h4>
+        <div class="d-flex justify-content-center mt-3">
+          <a href="apply form.html" class="btn bg-warning">APPLY NOW</a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <img src="src/mnc.png" class="img-fluid img-thumbnail" alt="MNC">
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f4f4;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background: #111;
+  color: #eee;
+}
+
+header.hero {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+h1, h2 {
+  margin-bottom: 10px;
+}
+
+.highlight {
+  color: #2563eb;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+.projects-container {
+  display: flex;
+  gap: 20px;
+}
+
+.project-card {
+  background: #ddd;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.skill-bar {
+  width: 0;
+  height: 10px;
+  background: #2563eb;
+  margin-bottom: 15px;
+  transition: width 1s ease;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Dark Mode Toggle */
+.dark-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: none;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Cursor Dot */
+#cursor-dot {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: #2563eb;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
